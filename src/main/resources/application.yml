@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: reggie_take_out             #这一项可选，若有，则用这里的命名，若无，则用项目的名称
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: root
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射，如 user_pwd --> userPwd
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+
+# 本地的上传文件保存路径配置
+reggie:
+  path: "D:\\GitProject\\MyReggie\\src\\main\\resources\\backend\\upload_img\\"
